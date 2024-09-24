@@ -5,6 +5,10 @@
 # @IDE      : PyCharm
 # @Github   : https://github.com/VeritasYin/Project_Orion
 
+# @Reader   : Ruize Li
+# @Updater  : Ruize Li
+# @IDE      : Visual Studio Code
+
 from utils.math_utils import z_score
 
 import numpy as np

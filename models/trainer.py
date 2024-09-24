@@ -27,7 +27,16 @@ def model_train(inputs, blocks, args, sum_path='./output/tensorboard'):
     batch_size, epoch, inf_mode, opt = args.batch_size, args.epoch, args.inf_mode, args.opt
 
     # Placeholder for model training
-    x = tf.placeholder(tf.float32, [None, n_his + 1, n, 1], name='data_input')
+    # change:x = tf.placeholder(tf.float32, [None, n_his + 1, n, 1], name='data_input') 
+    # 定义一个占位符x命名为'data_input'的语句 to
+    def data_generator():
+        while True:
+            # 生成数据示例
+            yield tf.random.uniform([batch_size, n_his + 1, n, 1], dtype=tf.float32)
+
+    x = tf.data.Dataset.from_generator(data_generator, output_signature=tf.TensorSpec(shape=[None, n_his + 1, n, 1], dtype=tf.float32))
+    #change end
+
     keep_prob = tf.placeholder(tf.float32, name='keep_prob')
 
     # Define model loss
