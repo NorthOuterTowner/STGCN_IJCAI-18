@@ -6,6 +6,9 @@
 # @IDE      : PyCharm
 # @Github   : https://github.com/VeritasYin/Project_Orion
 
+# @Time     : 30/9/2024
+# @Updater  : LiRuize
+
 import os
 #新加卷 1 line
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
