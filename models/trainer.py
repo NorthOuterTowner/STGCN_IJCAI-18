@@ -33,7 +33,7 @@ def model_train(inputs, blocks, args, sum_path='./output/tensorboard'):
 
     #x = tf.data.Dataset.from_generator(data_generator, output_signature=tf.TensorSpec(shape=[None, n_his + 1, n, 1], dtype=tf.float32))
     #change end
-
+    #Variable方法替换placeholder方法（tf 1.0->2.x）
     keep_prob = tf.Variable(initial_value=0, dtype=tf.float32)
 
     # Define model loss
